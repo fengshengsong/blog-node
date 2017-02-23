@@ -87,7 +87,7 @@ app.post('/addEssay',function(req,res){
     function _saveFile(){
         form.parse(req, function(err, fields, files) {
             if(err){
-                res.send('a');
+                res.send(err);
             }
 
             var uploadFields = fields;
@@ -138,47 +138,6 @@ app.post('/addEssay',function(req,res){
     }
 
 });
-
-
-
-    // var filename = req.body.filename;
-    // var type = req.body.type;
-    // var brief = req.body.brief;
-    // var file = req.body.file;
-    // var date = new Date();
-    // var year = date.getFullYear();
-    // var month = date.getMonth()+1;
-    // var day = date.getDate();
-    // var pos = filename.lastIndexOf("\\");
-    // filename = filename.substring(pos+1);
-    // var suffixPos = filename.lastIndexOf(".");
-    // var suffix = filename.substring(suffixPos+1);
-    // if(suffix === 'md'|| suffix === 'txt'||suffix==='mkd'){
-//         essayModel.count(function(err,count){
-//             var newEssay = new essayModel({
-//                 title:title,
-//                 filename: filename,
-//                 year:year,
-//                 month:month,
-//                 day:day,
-//                 type:type,
-//                 brief:brief,
-//                 index:BASE_INDEX+count+1
-//             });
-//             newEssay.save(function(err){
-//                 if(err){
-//                     console.log(JSON.stringify(err));                    
-//                 }else{
-//                     res.send('文章已成功上传！');
-//                 }
-//             });
-           
-//         });
-//     }else{
-//         res.send('文件类型错误！');
-//     }
-// });
-
 
 //express-mongoose
 // app.get('/display',function(req,res){

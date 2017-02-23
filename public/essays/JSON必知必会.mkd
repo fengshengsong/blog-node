@@ -1,0 +1,101 @@
+# JSON必知必会 - 需要记住的东西
+
+## 什么是JSON
+
+JSON，全称是Javascript Object Notation(Javascript对象表示法)，是一种轻量的数据交换格式。它是独立于编程语言的。
+
+## JSON语法
+
+JSON的基本表示方法如下。
+```javascript
+	{
+    	"name": "feng",
+        "age": 20
+    }
+```
+对于JSON名称-值对中的名称，不建议使用空格和特殊字符，尽管是可以使用的。而且名称必须用双引号包括起来，，不可以使用单引号，这与Javascript是不同的。
+
+## JSON数据类型
+
+JSON数据类型包括对象、字符串、数字、布尔值、null和数组。
+
+## JSON Schema
+
+JSON Schema是一种基于JSON格式定义JSON数据结构的规范。它可以解决例如值的数据类型是否正确、是否包含所需的数据、值的形式是否符合要求等问题。示例如下。
+
+一个JSON Schema
+```javascript
+	{
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "title": "Person",
+        "properties": {
+            "name": {
+                "type": "string",
+                "minLength": 1
+            },
+            "age": {
+                "type": "number",
+                "minium": 1
+            },
+            "sex": {
+                "type": "boolean"
+            }
+        },
+        "required": ["name","sex"]
+	}
+```
+一个可以通过验证的JSON
+```javascript
+	{
+		"name": "feng",
+        "age": 20,
+        "sex": false
+	}
+```
+这里可以参考：
+[JSON模式](http://wiki.jikexueyuan.com/project/json/schema.html)
+[JSON Schema Validation](http://json-schema.org/latest/json-schema-validation.html)
+[JSON Schema Lint](http://jsonschemalint.com/#/version/draft-05/markup/json)
+
+
+## JSON中的安全问题
+
+避免使用顶层JSON数组。
+```javascript
+	[
+    	{"name": "feng"},
+        {"name": "sheng"}
+    ]
+```
+将数组存放到对象中，使其成为非法的Javascript，这样就不会被script标签加载。
+```javascript
+	{
+    	info: [
+        	{"name": "feng"},
+        	{"name": "sheng"}
+        ]
+    }
+```
+一定要使用JSON.parse来解析JSON数据。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
