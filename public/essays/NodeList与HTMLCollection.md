@@ -1,6 +1,6 @@
 # NodeList与HTMLCollection
 
-前几天刷知乎的时候看到了一个`Nodelist`和`HTMLCollection`的问题，发现这个知识点自己记得不是很清楚，所以还是有必要写写画画查查弄弄清楚。
+前几天刷知乎的时候看到了一个`Nodelist`和`HTMLCollection`的问题，发现这个知识点自己记得不是很清楚，所以还是有必要弄弄清楚。
 
 《JavaScript高级程序设计》中是这样说的。`NodeList`是一种类数组对象，保存的是一组节点包括元素节点，文本节点等等。它具有`length`属性，也可以通过方括号索引或者`item()`方法来访问其中的节点，但他并不是一个`Array`的实例，也就是说并不是一个真正的数组。`NodeList`是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够实时地反应到`NodeList`对象当中。`HTMLCollection`对象与`NodeList`对象十分相似，它不仅具有`length`属性，也可以通过方括号索引或者`item()`方法来访问其中的节点，而且也是根据DOM的变化实时更新的。不同之处在于它还有一个方法`nameItem()`，此方法可以通过元素的`name`属性来获取相应的元素，并且`HTMLCollection`中的节点都是元素节点，是不包括文本等其他类型节点的。
 

@@ -1,4 +1,4 @@
-# vue之今天轮到vue-resource
+# 入坑vue-resource
 
 ## 基本
 

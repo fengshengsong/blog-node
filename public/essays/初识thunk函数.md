@@ -1,4 +1,5 @@
-thunk函数
+# 初识thunk函数
+
 thunk函数替换的不是表达式，而是多参数函数，将其替换成单参数的版本，且只接受回调函数作为参数。
 ```javascript
     var Thunk = function(fn) {
